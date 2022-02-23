@@ -9,6 +9,7 @@
 const width = document.querySelector("#width");
 const height = document.querySelector("#height");
 const submitButton = document.querySelector("#generate");
+const resetButton = document.querySelector("#reset");
 
 
 
@@ -36,6 +37,17 @@ submitButton.addEventListener('click', (e) => {
       })
       grid.appendChild(box);
     }
+  }
+})
+
+resetButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  let grid = document.querySelector(".grid")
+  grid.setAttribute("style", "display:none");
+
+  const boxes = document.querySelectorAll(".box");
+  for (const box of boxes){
+    box.remove();
   }
 })
 
