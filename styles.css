@@ -16,16 +16,16 @@ html {
 }
 
 .box {
-  height: 50px;
-  width: 50px;
-  flex: 1 0 49px;
+  border: 1px solid black;
 }
 .grid {
   margin: 20px;
-  display: none;
+  display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   border: 0.5px solid black;
+  width: 900px;
+  height: 900px;
 }
 
 .color {

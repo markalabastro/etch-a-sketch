@@ -15,23 +15,26 @@ const resetButton = document.querySelector("#reset");
 
 submitButton.addEventListener('click', (e) => {
 
+  const boxes = document.querySelectorAll(".box");
+  for (const box of boxes){
+    box.remove();
+  }
+
   e.preventDefault();
 
-  let widthValue = width.value;
-  let heightValue = height.value;
+  let widthBoxes = width.value;
+  let heightBoxes = height.value;
 
-  let gridWidth = widthValue * 50;
-  let gridHeight = heightValue * 50;
-  
-  let grid = document.querySelector(".grid")
-  grid.setAttribute("style", `display:flex; width: ${gridWidth}px; height: ${gridHeight}px`)
+  let widthBoxesDim = 898 / widthBoxes;
+  let heightBoxesDim = 898 / heightBoxes;  
+  let grid = document.querySelector(".grid");
 
 
-  for (i=1; i<=widthValue; i++){
-    for (j=1; j<=heightValue; j++){
+  for (i=1; i<=widthBoxes; i++){
+    for (j=1; j<=heightBoxes; j++){
       let box = document.createElement("div");
       box.classList.add("box")
-
+      box.setAttribute("style", `display:flex; width: ${widthBoxesDim}px; height: ${heightBoxesDim}px; flex:0 1 1`);
       box.addEventListener("mouseover", () => {
         box.classList.add("color")
       })
@@ -42,12 +45,10 @@ submitButton.addEventListener('click', (e) => {
 
 resetButton.addEventListener('click', (e) => {
   e.preventDefault();
-  let grid = document.querySelector(".grid")
-  grid.setAttribute("style", "display:none");
 
   const boxes = document.querySelectorAll(".box");
   for (const box of boxes){
-    box.remove();
+    box.classList.remove("color");
   }
 })
 
