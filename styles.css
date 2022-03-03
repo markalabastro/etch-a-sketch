@@ -17,13 +17,13 @@ html {
 
 .box {
   border: 1px solid black;
+  min-width: 0;
 }
 .grid {
   margin: 20px;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
-  border: 0.5px solid black;
+  border: 1px solid black;
   width: 900px;
   height: 900px;
 }
